@@ -8,31 +8,51 @@
 <body>
 
   <div class="container">
+<h1>🏥 Centro de Saúde Palmeiras</h1>
 
-    <h1>Centro de Saúde Palmeiras</h1>
-    <p>Bem-vindo ao portal de informações</p>
+<p><b>🕒 Horário:</b> Segunda a Sexta - 07h às 19h</p>
+<p><b>🚭 Grupo de Tabagismo:</b> Vagas abertas</p>
+<p><b>📱 WhatsApp:</b> <a href="#">Clique aqui</a></p>
 
-    <hr>
+<hr>
 
-    <h2>🕒 Horário de Funcionamento</h2>
-    <p>Segunda a Sexta: 07h às 19h</p>
+<!-- BOTÃO PRINCIPAL -->
+<button onclick="toggle('agendamento')">
+  📅 Agendamentos de Consulta e Exames
+</button>
 
-    <hr>
+<div id="agendamento" class="conteudo">
 
-    <h2>📅 Agendamento de Consultas e Exames</h2>
-    <p>Os agendamentos são realizados apenas presencialmente.</p>
-
-    <hr>
-
-    <h2>🚭 Campanhas</h2>
-    <p>Grupo de Tabagismo com vagas abertas. Procure a recepção!</p>
-
-    <hr>
-
-    <h2>📞 Contato</h2>
-    <p>Entre em contato com a unidade para mais informações: 31 3277-6485 ou 3277-6486</p>
-
+  <button onclick="toggle('rotina')">Consultas de rotina</button>
+  <div id="rotina" class="subconteudo">
+    São avaliados apenas no horário do acolhimento.<br>
+    Equipe Amarela e Azul: 7h às 8h<br>
+    Equipe Verde: 9h às 10h
   </div>
 
+  <button onclick="toggle('odonto')">Odontologia</button>
+  <div id="odonto" class="subconteudo">
+    Segunda a sexta-feira<br>
+    Manhã: 10h às 11h<br>
+    Tarde: 14h às 15h
+  </div>
+
+  <button onclick="toggle('exames')">Exames de Laboratório e ECG</button>
+  <div id="exames" class="subconteudo">
+    Comparecer na recepção de 7h às 19h com pedido médico.<br>
+    ECG: Apenas com agendamento prévio.
+  </div>
+
+  <button onclick="toggle('especializado')">Consultas e exames especializados</button>
+  <div id="especializado" class="subconteudo">
+    Comparecer com encaminhamento médico de 7h às 19h.
+  </div>
+
+  <p class="alerta">
+    ⚠️ Todos os atendimentos exigem documento oficial do paciente
+  </p>
+
+</div>
+<script src="script.js"></script>
 </body>
 </html>
