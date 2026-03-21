@@ -8,14 +8,10 @@ function toggle(id) {
   }
 }
 const url = "https://docs.google.com/spreadsheets/d/1mDXBTgqbxCKEq07Xub-8GR-0QoFO7k38sAoJOZM0ldY/export?format=csv";
-const url = "COLE_AQUI_SEU_LINK_CSV";
-
 function abrirBot() {
   const chat = document.getElementById("chat");
   chat.style.display = chat.style.display === "block" ? "none" : "block";
 }
-
-const url = "https://docs.google.com/spreadsheets/d/1mDXBTgqbxCKEq07Xub-8GR-0QoFO7k38sAoJOZM0ldY/export?format=csv";
 
 function abrirBot() {
   const chat = document.getElementById("chat");
