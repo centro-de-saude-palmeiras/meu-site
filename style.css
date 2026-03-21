@@ -1,11 +1,15 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0f172a;
+  background-image: url("imagens/fundo.png");
+  background-size: cover;        /* cobre toda a tela */
+  background-position: center;   /* centraliza */
+  background-repeat: repeat;  /* repete a imagem */
 }
 
 .container {
-  background: white;
+  background: rgba(255, 255, 255, 0.95); /* leve transparência */
+  backdrop-filter: blur(5px); /* efeito vidro (moderno) */
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
