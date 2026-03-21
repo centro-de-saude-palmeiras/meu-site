@@ -15,15 +15,23 @@ function abrirBot() {
   chat.style.display = chat.style.display === "block" ? "none" : "block";
 }
 
+const url = "https://docs.google.com/spreadsheets/d/1mDXBTgqbxCKEq07Xub-8GR-0QoFO7k38sAoJOZM0ldY/export?format=csv";
+
+function abrirBot() {
+  const chat = document.getElementById("chat");
+  chat.style.display = chat.style.display === "block" ? "none" : "block";
+}
+
 fetch(url)
   .then(res => res.text())
   .then(data => {
-    const url = "COLE_AQUI_SEU_LINK_CSV";
     const linhas = data.split("\n").slice(1);
     const perguntasDiv = document.getElementById("perguntas");
 
     linhas.forEach(linha => {
-      const [pergunta, resposta] = linha.split(",");
+      const partes = linha.split(",");
+      const pergunta = partes[0];
+      const resposta = partes.slice(1).join(",");
 
       const botao = document.createElement("button");
       botao.innerText = pergunta;
