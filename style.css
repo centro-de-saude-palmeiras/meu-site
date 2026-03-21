@@ -1,0 +1,13 @@
+body {
+  text-align: center;
+  background: #1e293b;
+  color: white;
+  font-family: Arial;
+}
+
+button {
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+}
