@@ -100,3 +100,43 @@ button:hover {
     font-size: 15px;
   }
 }
+.botao-bot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.chat {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+#perguntas button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#resposta {
+  margin-top: 10px;
+  font-size: 14px;
+}
