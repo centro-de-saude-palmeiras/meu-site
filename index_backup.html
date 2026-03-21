@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Meu primeiro site 🚀</h1>
+  <p>Se você está vendo isso, deu certo!</p>
+
+  <button onclick="clicou()">Clique aqui</button>
+
+  <script src="script.js"></script>
+  <div id="chat" style="position:fixed; bottom:20px; right:20px; width:250px; background:white; padding:10px; border-radius:10px;">
+  <p><b>Atendimento</b></p>
+
+  <button onclick="responder('horario')">Horário</button>
+  <button onclick="responder('agendamento')">Agendamento</button>
+  <button onclick="responder('tabagismo')">Tabagismo</button>
+
+  <p id="resposta"></p>
+</div>
+
+<script>
+function responder(tipo) {
+  let resposta = "";
+
+  if (tipo === "horario") {
+    resposta = "Funcionamos de segunda a sexta, 07h às 19h.";
+  }
+
+  if (tipo === "agendamento") {
+    resposta = "Agendamentos são feitos APENAS presencialmente.";
+  }
+
+  if (tipo === "tabagismo") {
+    resposta = "Grupo de tabagismo com vagas abertas na recepção ATÉ 24/03/2026.";
+  }
+
+  document.getElementById("resposta").innerText = resposta;
+}
+</script>
+</body>
+</html>

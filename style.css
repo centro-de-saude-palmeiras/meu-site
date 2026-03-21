@@ -1,13 +1,31 @@
 body {
-  text-align: center;
-  background: #1e293b;
-  color: white;
-  font-family: Arial;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
 }
 
-button {
-  padding: 10px;
-  background: green;
-  color: white;
-  border: none;
+.container {
+  background: white;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #0f172a;
+}
+
+h2 {
+  color: #1d4ed8;
+}
+
+p {
+  color: #334155;
+  text-align: center;
+}
+
+hr {
+  margin: 20px 0;
 }
