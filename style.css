@@ -2,18 +2,25 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-image: url("imagens/fundo.png");
-  background-size: cover;        /* cobre toda a tela */
-  background-position: center;   /* centraliza */
-  background-repeat: repeat;  /* repete a imagem */
+  background-repeat: repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.95); /* leve transparência */
-  backdrop-filter: blur(5px); /* efeito vidro (moderno) */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* sombra profissional */
 }
 
 h1 {
@@ -22,7 +29,9 @@ h1 {
 }
 
 h2 {
-  color: #1d4ed8;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 p {
