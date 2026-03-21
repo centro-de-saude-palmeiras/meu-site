@@ -77,3 +77,26 @@ button:hover {
   font-weight: bold;
   text-align: center;
 } 
+@media (max-width: 600px) {
+  .container {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
