@@ -7,3 +7,4 @@ function toggle(id) {
     elemento.style.display = "block";
   }
 }
+const url = "https://docs.google.com/spreadsheets/d/1mDXBTgqbxCKEq07Xub-8GR-0QoFO7k38sAoJOZM0ldY/export?format=csv";
