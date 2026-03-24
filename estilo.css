@@ -86,6 +86,7 @@ button:hover {
   .container {
     margin: 10px;
     padding: 20px;
+    height: 600px;
   }
 
   h1 {
