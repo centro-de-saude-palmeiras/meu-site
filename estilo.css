@@ -175,14 +175,6 @@ button:hover {
   overflow-y: auto;
 }
 
-.bot-msg {
-  background: #e2e8f0;
-  padding: 8px;
-  border-radius: 10px;
-  margin-bottom: 5px;
-  max-width: 80%;
-}
-
 .user-msg {
   background: #1d4ed8;
   color: white;
