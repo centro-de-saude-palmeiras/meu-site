@@ -1,41 +1,37 @@
-function toggle(id) {
-  const elemento = document.getElementById(id);
-
-  if (elemento.style.display === "block") {
-    elemento.style.display = "none";
-  } else {
-    elemento.style.display = "block";
-  }
-}
 const url = "https://docs.google.com/spreadsheets/d/1mDXBTgqbxCKEq07Xub-8GR-0QoFO7k38sAoJOZM0ldY/export?format=csv";
-function abrirBot() {
-  const chat = document.getElementById("chat");
-  chat.style.display = chat.style.display === "block" ? "none" : "block";
+
+function toggleChat() {
+  const box = document.getElementById("chat-box");
+  box.style.display = box.style.display === "flex" ? "none" : "flex";
 }
 
-function abrirBot() {
-  const chat = document.getElementById("chat");
-  chat.style.display = chat.style.display === "block" ? "none" : "block";
+function addMessage(text, type) {
+  const msg = document.createElement("div");
+  msg.className = type === "user" ? "user-msg" : "bot-msg";
+  msg.innerText = text;
+
+  document.getElementById("chat-messages").appendChild(msg);
 }
 
 fetch(url)
   .then(res => res.text())
   .then(data => {
     const linhas = data.split("\n").slice(1);
-    const perguntasDiv = document.getElementById("perguntas");
+    const optionsDiv = document.getElementById("chat-options");
 
     linhas.forEach(linha => {
       const partes = linha.split(",");
       const pergunta = partes[0];
       const resposta = partes.slice(1).join(",");
 
-      const botao = document.createElement("button");
-      botao.innerText = pergunta;
+      const btn = document.createElement("button");
+      btn.innerText = pergunta;
 
-      botao.onclick = () => {
-        document.getElementById("resposta").innerText = resposta;
+      btn.onclick = () => {
+        addMessage(pergunta, "user");
+        addMessage(resposta, "bot");
       };
 
-      perguntasDiv.appendChild(botao);
+      optionsDiv.appendChild(btn);
     });
   });
