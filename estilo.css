@@ -131,11 +131,18 @@ button:hover {
 }
 
 .avatar-bot {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  object-fit: cover; /* Garante que a imagem não distorça */
-  border: 2px solid white;
+  width: 40px;      /* Largura fixa */
+  height: 40px;     /* Altura fixa (igual à largura para ser um círculo) */
+  border-radius: 50%; /* O segredo para deixar a imagem redonda */
+  object-fit: cover;  /* Garante que a foto não fique "esticada" ou "espremida" */
+  border: 2px solid white; /* Um contorno branco para dar destaque no fundo verde */
+}
+
+#chat-header {
+  display: flex;      /* Alinha a imagem e o texto lado a lado */
+  align-items: center; /* Centraliza verticalmente a imagem com o texto */
+  gap: 10px;          /* Dá um espacinho entre a foto e a frase */
+  /* ... mantenha o restante do seu estilo de cor e fundo ... */
 }
 
 /* A Caixa que contém o Accordion */
