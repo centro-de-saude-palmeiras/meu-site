@@ -1,3 +1,17 @@
+function toggle(id) {
+  // 1. Localiza o elemento pelo ID que veio do clique do botão
+  var elemento = document.getElementById(id);
+  
+  // 2. Verifica o estado atual do display
+  if (elemento.style.display === "block") {
+    // Se estiver aberto, ele fecha
+    elemento.style.display = "none";
+  } else {
+    // Se estiver fechado, ele abre
+    elemento.style.display = "block";
+  }
+}
+
 const url = "https://docs.google.com/spreadsheets/d/1mDXBTgqbxCKEq07Xub-8GR-0QoFO7k38sAoJOZM0ldY/export?format=csv";
 
 function toggleChat() {
