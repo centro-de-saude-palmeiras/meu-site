@@ -108,40 +108,44 @@ button:hover {
 }
 /* --- CHATBOT REFORMULADO (TEXTO GRANDE E POSIÇÃO LATERAL) --- */
 
+/* Container Principal do Bot */
 #bot {
   position: fixed;
-  top: 20px;       /* Mudei de bottom para TOP para ele ficar fixo no topo direito */
-  right: 30px;
+  bottom: 30px;      /* Mantive no rodapé, mas você pode usar 'top: 30px' se preferir */
+  right: 30px;       /* Distância da borda direita da tela */
   z-index: 1000;
   display: flex;
-  flex-direction: column; /* Alinha o header e a box em coluna vertical */
-  align-items: flex-end;  /* Alinha tudo à direita da tela */
+  flex-direction: row-reverse; /* O SEGREDO: Botão na direita, Box na esquerda */
+  align-items: flex-end;      /* Alinha o fundo do botão com o fundo da caixa */
+  gap: 15px;                  /* Espaço entre o botão e a caixa de chat */
+  font-family: sans-serif;
 }
 
+/* O Botão (Header) */
 #chat-header {
   background: #22c55e;
   color: white;
-  padding: 12px 25px;
+  padding: 15px 25px;
   border-radius: 50px;
   cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
   gap: 15px;
   font-size: 22px;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  /* Removi o transition de escala para o botão não "dançar" ao clicar */
+  flex-shrink: 0; /* Impede que o botão diminua de tamanho */
 }
 
+/* A Caixa de Perguntas (Box) */
 #chat-box {
-  width: 420px;
-  max-height: 70vh;    /* Ocupa no máximo 70% da altura da tela */
+  width: 420px;       /* Largura boa para os textos tam 20 e 18 */
+  max-height: 80vh;   /* Ocupa no máximo 80% da altura da tela */
   background: white;
   border-radius: 20px;
-  margin-top: 10px;    /* Espaço entre o botão e as perguntas */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  overflow-y: auto;    /* Se tiver muita pergunta, cria barra de rolagem */
-  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  overflow-y: auto;   /* Cria barra de rolagem se houver muitas perguntas */
+  padding: 20px;
   /* O display: none é controlado pelo JavaScript */
 }
 
@@ -192,11 +196,14 @@ button:hover {
   display: block;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 768px) {
   #bot {
-    right: 10px; /* Encosta mais na borda em telas médias */
+    flex-direction: column; /* Volta a empilhar em telas pequenas */
+    align-items: flex-end;
+    right: 10px;
   }
   #chat-box {
-    width: 260px; /* Diminui um pouco a largura do chat para ganhar espaço */
+    width: 280px; /* Diminui a largura no celular */
+    margin-top: 10px;
   }
 }
