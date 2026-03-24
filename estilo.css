@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 20px;
   font-family: Arial, sans-serif;
   background-image: url("Imagens/fundo.png");
   background-repeat: repeat;
@@ -17,15 +17,14 @@ body::before {
 .container {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
-  max-width: 800px;      /* Reduzi um pouco a largura para sobrar mais pista na direita */
-  
-  /* A MUDANÇA REAL ESTÁ AQUI: */
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 50px;     /* Distância fixa da borda esquerda */
-  margin-right: auto;    /* Empurra todo o espaço restante para a DIREITA */
+  max-width: 1000px;
+  height: 600px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 
-  padding: 30px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
@@ -109,11 +108,12 @@ button:hover {
 
 /* --- SEÇÃO DO CHATBOT --- */
 #bot {
-  position: fixed !important; 
-  bottom: 20px !important;    
-  right: 20px !important;     /* Isso cola ele na borda direita do MONITOR */
-  z-index: 99999 !important;  /* Fica acima de TUDO */
-  display: flex !important;
+  position: fixed; 
+  bottom: 5px;   
+  right: 20px; 
+  z-index: 99999; 
+
+  display: flex;
   flex-direction: row-reverse; 
   align-items: flex-end;
   gap: 15px;
