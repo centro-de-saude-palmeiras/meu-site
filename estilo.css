@@ -104,7 +104,7 @@ button:hover {
 #bot {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 5%;
   z-index: 1000;
   font-family: sans-serif;
   display: flex;
@@ -190,4 +190,13 @@ button:hover {
 /* Classe utilitária para mostrar o conteúdo (usada pelo JS) */
 .accordion-content.active {
   display: block;
+}
+
+@media (max-width: 1100px) {
+  #bot {
+    right: 10px; /* Encosta mais na borda em telas médias */
+  }
+  #chat-box {
+    width: 260px; /* Diminui um pouco a largura do chat para ganhar espaço */
+  }
 }
