@@ -111,7 +111,7 @@ button:hover {
 #bot {
   position: fixed;
   bottom: 20px;         /* Distância do chão da tela */
-  right: 20px;          /* Distância da parede direita da tela */
+  right: 50px;          /* Distância da parede direita da tela */
   z-index: 9999;
   display: flex;
   flex-direction: row-reverse; /* Caixa nasce para a ESQUERDA do botão */
