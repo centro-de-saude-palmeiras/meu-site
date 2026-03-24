@@ -106,41 +106,47 @@ button:hover {
     font-size: 15px;
   }
 }
+
+/* Container que fixa o Bot no rodapé */
 #bot {
   position: fixed;
-  bottom: 30px;
-  right: 30px;          /* O Ícone fica travado aqui */
+  bottom: 20px;         /* Distância do chão da tela */
+  right: 20px;          /* Distância da parede direita da tela */
   z-index: 9999;
   display: flex;
-  flex-direction: row-reverse; /* A caixa abre para a ESQUERDA do ícone */
-  align-items: flex-end;
-  gap: 15px;            /* Espaço entre o ícone e a caixa */
+  flex-direction: row-reverse; /* Caixa nasce para a ESQUERDA do botão */
+  align-items: flex-end;      /* Alinha a base da caixa com a base do botão */
+  gap: 15px;                  /* Espaço entre o botão e a caixa */
+  font-family: sans-serif;
 }
 
+/* O Botão Verde (O que fica sempre visível) */
 #chat-header {
   background: #22c55e;
   color: white;
-  padding: 12px 25px;
+  padding: 12px 20px;
   border-radius: 50px;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 20px;
+  gap: 10px;
+  font-size: 18px;
   font-weight: bold;
-  flex-shrink: 0;       /* IMPORTANTE: impede o botão de diminuir quando a caixa abrir */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  flex-shrink: 0; /* Impede o botão de "esmagar" quando a caixa abrir */
 }
 
+/* A Caixa de Perguntas (A que abre e fecha) */
 #chat-box {
-  display: none;        /* Começa fechado */
-  width: 400px;
-  max-height: 500px;
+  display: none;      /* Começa escondida */
+  width: 380px;       /* Largura confortável */
+  max-height: 500px;  /* Altura máxima para não sumir no topo */
   background: white;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  padding: 20px;
-  overflow-y: auto;     /* Se tiver muita pergunta, rola dentro da caixinha */
+  padding: 15px;
+  overflow-y: auto;   /* Se tiver muita pergunta, aparece rolagem interna */
+  border: 1px solid #e2e8f0;
 }
 
 #chat-header:hover {
