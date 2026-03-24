@@ -86,25 +86,21 @@ button:hover {
   .container {
     margin: 10px;
     padding: 20px;
-    height: 600px;
+    
+    /* MUDANÇA AQUI: */
+    /* Em vez de 600px fixos, usamos 80% da altura da tela disponível */
+    min-height: 80vh; 
+    
+    /* Isso garante que, se você adicionar MUITA coisa, 
+       o fundo branco acompanhe o crescimento */
+    height: auto; 
   }
 
-  h1 {
-    font-size: 22px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  button {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  p {
-    font-size: 15px;
-  }
+  /* Seus outros estilos de fonte estão ótimos, mantenha-os! */
+  h1 { font-size: 22px; }
+  h2 { font-size: 18px; }
+  button { font-size: 16px; padding: 12px; }
+  p { font-size: 15px; }
 }
 
 /* --- SEÇÃO DO CHATBOT --- */
