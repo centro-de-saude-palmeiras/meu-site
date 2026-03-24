@@ -35,3 +35,20 @@ fetch(url)
       optionsDiv.appendChild(btn);
     });
   });
+
+  /**
+ * Alterna a visibilidade de um elemento pelo ID.
+ * @param {string} id - O ID do elemento que queremos mostrar/esconder.
+ */
+function toggle(id) {
+  const elemento = document.getElementById(id);
+  
+  // Verificamos se o elemento existe para evitar erros no console
+  if (elemento) {
+    if (elemento.style.display === "block") {
+      elemento.style.display = "none";
+    } else {
+      elemento.style.display = "block";
+    }
+  }
+}

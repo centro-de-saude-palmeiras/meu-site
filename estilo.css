@@ -161,3 +161,21 @@ button:hover {
 #chat-options button:hover {
   background: #e2e8f0;
 }
+/* Esconde o conteúdo principal do agendamento */
+.conteudo {
+  display: none; 
+  margin-top: 10px;
+  border-left: 4px solid #1d4ed8; /* Um detalhe visual para indicar hierarquia */
+  padding-left: 10px;
+}
+
+/* Esconde os sub-itens (Odonto, Rotina, etc) */
+.subconteudo {
+  display: none;
+  background: #f1f5f9;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  color: #1e293b;
+  line-height: 1.5;
+}
