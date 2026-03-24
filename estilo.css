@@ -100,30 +100,32 @@ button:hover {
     font-size: 15px;
   }
 }
-/* Container Principal do Bot no canto da tela */
+/* --- CHATBOT REFORMULADO (TEXTO GRANDE E POSIÇÃO LATERAL) --- */
+
 #bot {
   position: fixed;
-  bottom: 20px;
-  right: 15%;
+  bottom: 30px;
+  right: 30px; /* Valor fixo para ficar bem no canto da tela */
   z-index: 1000;
-  font-family: sans-serif;
   display: flex;
-  flex-direction: column; /* Organiza header em cima, box embaixo */
-  align-items: flex-end; /* Alinha tudo à direita */
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: sans-serif;
 }
 
-/* O "Botão" do Recepcionista */
 #chat-header {
-  background: #22c55e; /* Verde profissional */
+  background: #22c55e;
   color: white;
-  padding: 10px 15px;
-  border-radius: 30px;
+  padding: 15px 30px; /* Aumentado para dar mais presença */
+  border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   transition: transform 0.2s;
+  font-size: 24px; /* "Posso ajudar?" bem visível */
+  font-weight: bold;
 }
 
 #chat-header:hover {
@@ -131,70 +133,56 @@ button:hover {
 }
 
 .avatar-bot {
-  width: 40px;      /* Largura fixa */
-  height: 40px;     /* Altura fixa (igual à largura para ser um círculo) */
-  border-radius: 50%; /* O segredo para deixar a imagem redonda */
-  object-fit: cover;  /* Garante que a foto não fique "esticada" ou "espremida" */
-  border: 2px solid white; /* Um contorno branco para dar destaque no fundo verde */
+  width: 70px; /* Avatar maior solicitado */
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  flex-shrink: 0;
 }
 
-#chat-header {
-  display: flex;      /* Alinha a imagem e o texto lado a lado */
-  align-items: center; /* Centraliza verticalmente a imagem com o texto */
-  gap: 10px;          /* Dá um espacinho entre a foto e a frase */
-  /* ... mantenha o restante do seu estilo de cor e fundo ... */
-}
-
-/* A Caixa que contém o Accordion */
 #chat-box {
-  width: 300px;
-  max-height: 400px; /* Limita a altura para não cobrir tudo */
+  width: 450px; /* Caixa mais larga para os textos 20px e 18px */
+  max-height: 550px;
   background: white;
-  border-radius: 15px;
-  margin-top: 10px; /* Espaço entre o botão e a caixa */
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for grande */
-  padding: 10px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  overflow-y: auto;
+  padding: 20px;
+  display: none; 
 }
 
-/* --- ESTILOS DO ACCORDION (Perguntas e Respostas) --- */
-
-/* O Botão da Pergunta */
+/* PERGUNTAS (TAMANHO 20) */
 .accordion-item button {
-  all: unset; /* Reseta o estilo global de botão */
+  all: unset;
   width: 100%;
-  padding: 12px 15px;
+  padding: 15px;
   background: #f1f5f9;
   color: #1d4ed8;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 20px; /* Conforme solicitado */
+  font-weight: bold;
   text-align: left;
   box-sizing: border-box;
-  margin-bottom: 5px;
-  transition: background 0.2s;
-  display: flex;
-  justify-content: space-between; /* Espaço para um ícone opcional */
+  margin-bottom: 8px;
 }
 
-.accordion-item button:hover {
-  background: #e2e8f0;
-}
-
-/* A Caixa da Resposta (Escondida por padrão) */
+/* RESPOSTAS (TAMANHO 18) */
 .accordion-content {
-  display: none; /* ESCONDIDO INICIALMENTE */
-  padding: 10px 15px;
+  display: none; 
+  padding: 15px;
   background: #f8fafc;
   color: #334155;
-  font-size: 13px;
-  border-radius: 0 0 8px 8px;
-  margin-top: -5px; /* Cola na pergunta */
-  margin-bottom: 10px;
-  border-left: 3px solid #22c55e;
+  font-size: 18px; /* Conforme solicitado */
+  line-height: 1.6;
+  border-radius: 0 0 12px 12px;
+  margin-top: -8px;
+  margin-bottom: 15px;
+  border-left: 6px solid #22c55e;
 }
 
-/* Classe utilitária para mostrar o conteúdo (usada pelo JS) */
 .accordion-content.active {
   display: block;
 }
