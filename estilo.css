@@ -100,7 +100,7 @@ button:hover {
     font-size: 15px;
   }
 }
-/* Posicionamento do Container do Bot */
+/* Container Principal do Bot no canto da tela */
 #bot {
   position: fixed;
   bottom: 20px;
@@ -108,19 +108,21 @@ button:hover {
   z-index: 1000;
   font-family: sans-serif;
   display: flex;
-  flex-direction: column-reverse; /* Inverte: cabeçalho embaixo, chat cresce para cima */
-  align-items: flex-end;
+  flex-direction: column; /* Organiza header em cima, box embaixo */
+  align-items: flex-end; /* Alinha tudo à direita */
 }
 
-/* O "Botão" de abrir */
+/* O "Botão" do Recepcionista */
 #chat-header {
-  background: #22c55e; /* Verde para destacar */
+  background: #22c55e; /* Verde profissional */
   color: white;
-  padding: 12px 20px;
+  padding: 10px 15px;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
   transition: transform 0.2s;
 }
 
@@ -128,26 +130,33 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* A Caixa de Chat */
-#chat-box {
-  width: 320px;
-  max-height: 450px;
-  background: white;
-  border-radius: 15px;
-  margin-bottom: 10px; /* Espaço entre a caixa e o botão */
-  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+.avatar-bot {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover; /* Garante que a imagem não distorça */
+  border: 2px solid white;
 }
 
-/* Estilo específico para botões DENTRO do chat */
-#chat-options button {
-  all: unset; /* Reseta o estilo global de 'button' */
-  display: block;
-  width: calc(100% - 20px);
-  margin: 5px 10px;
+/* A Caixa que contém o Accordion */
+#chat-box {
+  width: 300px;
+  max-height: 400px; /* Limita a altura para não cobrir tudo */
+  background: white;
+  border-radius: 15px;
+  margin-top: 10px; /* Espaço entre o botão e a caixa */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for grande */
   padding: 10px;
+}
+
+/* --- ESTILOS DO ACCORDION (Perguntas e Respostas) --- */
+
+/* O Botão da Pergunta */
+.accordion-item button {
+  all: unset; /* Reseta o estilo global de botão */
+  width: 100%;
+  padding: 12px 15px;
   background: #f1f5f9;
   color: #1d4ed8;
   border-radius: 8px;
@@ -155,27 +164,30 @@ button:hover {
   font-size: 14px;
   text-align: left;
   box-sizing: border-box;
+  margin-bottom: 5px;
   transition: background 0.2s;
+  display: flex;
+  justify-content: space-between; /* Espaço para um ícone opcional */
 }
 
-#chat-options button:hover {
+.accordion-item button:hover {
   background: #e2e8f0;
 }
-/* Esconde o conteúdo principal do agendamento */
-.conteudo {
-  display: none; 
-  margin-top: 10px;
-  border-left: 4px solid #1d4ed8; /* Um detalhe visual para indicar hierarquia */
-  padding-left: 10px;
+
+/* A Caixa da Resposta (Escondida por padrão) */
+.accordion-content {
+  display: none; /* ESCONDIDO INICIALMENTE */
+  padding: 10px 15px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 13px;
+  border-radius: 0 0 8px 8px;
+  margin-top: -5px; /* Cola na pergunta */
+  margin-bottom: 10px;
+  border-left: 3px solid #22c55e;
 }
 
-/* Esconde os sub-itens (Odonto, Rotina, etc) */
-.subconteudo {
-  display: none;
-  background: #f1f5f9;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 8px;
-  color: #1e293b;
-  line-height: 1.5;
+/* Classe utilitária para mostrar o conteúdo (usada pelo JS) */
+.accordion-content.active {
+  display: block;
 }
