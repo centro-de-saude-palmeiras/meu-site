@@ -110,27 +110,39 @@ button:hover {
 
 #bot {
   position: fixed;
-  bottom: 30px;
-  right: 20px;           /* Valor pequeno para encostar na borda direita da tela */
+  top: 20px;       /* Mudei de bottom para TOP para ele ficar fixo no topo direito */
+  right: 30px;
   z-index: 1000;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: column; /* Alinha o header e a box em coluna vertical */
+  align-items: flex-end;  /* Alinha tudo à direita da tela */
 }
 
 #chat-header {
   background: #22c55e;
   color: white;
-  padding: 15px 30px; /* Aumentado para dar mais presença */
+  padding: 12px 25px;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
   gap: 15px;
-  transition: transform 0.2s;
-  font-size: 24px; /* "Posso ajudar?" bem visível */
+  font-size: 22px;
   font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  /* Removi o transition de escala para o botão não "dançar" ao clicar */
+}
+
+#chat-box {
+  width: 420px;
+  max-height: 70vh;    /* Ocupa no máximo 70% da altura da tela */
+  background: white;
+  border-radius: 20px;
+  margin-top: 10px;    /* Espaço entre o botão e as perguntas */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  overflow-y: auto;    /* Se tiver muita pergunta, cria barra de rolagem */
+  padding: 15px;
+  /* O display: none é controlado pelo JavaScript */
 }
 
 #chat-header:hover {
@@ -144,18 +156,6 @@ button:hover {
   object-fit: cover;
   border: 3px solid white;
   flex-shrink: 0;
-}
-
-#chat-box {
-  width: 450px; /* Caixa mais larga para os textos 20px e 18px */
-  max-height: 550px;
-  background: white;
-  border-radius: 20px;
-  margin-top: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  overflow-y: auto;
-  padding: 20px;
-  display: none; 
 }
 
 /* PERGUNTAS (TAMANHO 20) */

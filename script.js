@@ -6,8 +6,13 @@ const url = "https://docs.google.com/spreadsheets/d/1mDXBTgqbxCKEq07Xub-8GR-0QoF
  * Abre e fecha a caixa principal do chat.
  */
 function toggleChat() {
-  const box = document.getElementById("chat-box");
-  box.style.display = box.style.display === "block" ? "none" : "block";
+  const chatBox = document.getElementById("chat-box");
+  
+  if (chatBox.style.display === "none" || chatBox.style.display === "") {
+    chatBox.style.display = "block";
+  } else {
+    chatBox.style.display = "none";
+  }
 }
 
 /**
