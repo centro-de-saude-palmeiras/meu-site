@@ -106,47 +106,41 @@ button:hover {
     font-size: 15px;
   }
 }
-/* --- CHATBOT REFORMULADO (TEXTO GRANDE E POSIÇÃO LATERAL) --- */
-
-/* Container Principal do Bot */
 #bot {
   position: fixed;
-  bottom: 30px;      /* Mantive no rodapé, mas você pode usar 'top: 30px' se preferir */
-  right: 30px;       /* Distância da borda direita da tela */
-  z-index: 1000;
+  bottom: 30px;
+  right: 30px;          /* O Ícone fica travado aqui */
+  z-index: 9999;
   display: flex;
-  flex-direction: row-reverse; /* O SEGREDO: Botão na direita, Box na esquerda */
-  align-items: flex-end;      /* Alinha o fundo do botão com o fundo da caixa */
-  gap: 15px;                  /* Espaço entre o botão e a caixa de chat */
-  font-family: sans-serif;
+  flex-direction: row-reverse; /* A caixa abre para a ESQUERDA do ícone */
+  align-items: flex-end;
+  gap: 15px;            /* Espaço entre o ícone e a caixa */
 }
 
-/* O Botão (Header) */
 #chat-header {
   background: #22c55e;
   color: white;
-  padding: 15px 25px;
+  padding: 12px 25px;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 22px;
+  gap: 12px;
+  font-size: 20px;
   font-weight: bold;
-  flex-shrink: 0; /* Impede que o botão diminua de tamanho */
+  flex-shrink: 0;       /* IMPORTANTE: impede o botão de diminuir quando a caixa abrir */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* A Caixa de Perguntas (Box) */
 #chat-box {
-  width: 420px;       /* Largura boa para os textos tam 20 e 18 */
-  max-height: 80vh;   /* Ocupa no máximo 80% da altura da tela */
+  display: none;        /* Começa fechado */
+  width: 400px;
+  max-height: 500px;
   background: white;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  overflow-y: auto;   /* Cria barra de rolagem se houver muitas perguntas */
   padding: 20px;
-  /* O display: none é controlado pelo JavaScript */
+  overflow-y: auto;     /* Se tiver muita pergunta, rola dentro da caixinha */
 }
 
 #chat-header:hover {

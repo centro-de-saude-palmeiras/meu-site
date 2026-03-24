@@ -1,13 +1,7 @@
 const url = "https://docs.google.com/spreadsheets/d/1mDXBTgqbxCKEq07Xub-8GR-0QoFO7k38sAoJOZM0ldY/export?format=csv";
-
-// --- FUNÇÕES DE INTERAÇÃO ---
-
-/**
- * Abre e fecha a caixa principal do chat.
- */
 function toggleChat() {
   const chatBox = document.getElementById("chat-box");
-  
+  // Se estiver escondido, mostra. Se estiver visível, esconde.
   if (chatBox.style.display === "none" || chatBox.style.display === "") {
     chatBox.style.display = "block";
   } else {
