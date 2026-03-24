@@ -17,11 +17,11 @@ body::before {
 .container {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 800px;      /* Diminuí um pouco de 900 para 800 para sobrar mais espaço */
+  margin: 40px 50px;     /* 40px em cima/baixo, 50px na esquerda. O lado direito fica livre. */
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* sombra profissional */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 h1 {
